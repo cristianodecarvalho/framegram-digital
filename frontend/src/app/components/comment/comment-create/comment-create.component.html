@@ -1,0 +1,8 @@
+<form>
+    <mat-form-field>
+        <input matInput placeholder="Adicione um comentário..." [(ngModel)]="message" name="message">
+    </mat-form-field>
+    <button mat-raised-button (click)="createComment()" color="primary">
+        Enviar
+    </button>
+</form>

@@ -1,0 +1,13 @@
+<h4>Albúns</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Escolha um albúm</mat-label>
+  <mat-select [(value)]="albumId">
+    <mat-option *ngFor="let album of albums" [value]="album.id">
+      {{album.description}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="albumId" cdkFocusInitial>Ok</button>
+</div>

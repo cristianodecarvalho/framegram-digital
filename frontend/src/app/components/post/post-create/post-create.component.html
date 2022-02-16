@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-title>Nova publicação</mat-card-title>
+    <form>
+        <hr>
+        <img [src]="url" alt="">
+        <input type="file" (change)="onSelectFile($event)">
+
+        <!-- <mat-form-field>
+            <input matInput placeholder="Imagem" [(ngModel)]="post.image" name="image">
+        </mat-form-field> -->
+
+
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]="post.description" name="description">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Link" [(ngModel)]="post.link" name="link">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="createPost()" color="primary">
+        Salvar
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>

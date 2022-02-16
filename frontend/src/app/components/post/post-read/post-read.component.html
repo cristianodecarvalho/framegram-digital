@@ -1,0 +1,30 @@
+<div class="card-wrapper centerElements">
+    <div class="margin" *ngFor="let post of posts">
+        <mat-card class="my-4">
+            <mat-card-title-group>
+                <mat-card-title>{{post.user.name}}</mat-card-title>
+                <mat-card-actions align="end">
+                    <button *ngIf="myPosts"mat-icon-button (click)="addToAlbum(post.id)" style="color: #28a745;">
+                        <mat-icon>library_add</mat-icon>
+                    </button>
+                    <button *ngIf="myPosts" mat-icon-button color="warn" (click)="delete(post.id)">
+                        <mat-icon>delete_outline</mat-icon>
+                    </button>
+                </mat-card-actions>
+            </mat-card-title-group>
+            <!-- src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg" alt="Angular Logo"> -->
+            <img mat-card-image class="centerImage"
+                src="http://localhost:8080/images/{{post.id}}/{{post.image}}" alt="Post Image">
+            <mat-card-content>
+                <p>{{post.description}}</p>
+            </mat-card-content>
+            <mat-card-content>
+                <a href="{{post.link}}" target="_blank">{{post.link}}</a>
+            </mat-card-content>
+            <hr>
+            <p>Comentários</p>
+            <app-comment-read [comments]="post.comments" (removeComment)="removeComment($event)"></app-comment-read>
+            <app-comment-create [postId]="post.id" (addComment)="receiveComment($event)"></app-comment-create>
+        </mat-card>
+    </div>
+</div>

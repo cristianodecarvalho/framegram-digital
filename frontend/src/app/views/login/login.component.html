@@ -1,0 +1,18 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Autenticação</mat-card-title>
+        <form>
+            <hr>
+            <mat-form-field>
+                <input matInput placeholder="Usuário" [(ngModel)]="auth.login" name="login">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Senha" [(ngModel)]="auth.password" name="password" type="password">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="authenticate()" color="primary">
+            Entrar
+        </button>
+    </mat-card>
+</div>

@@ -1,0 +1,10 @@
+<div>
+    <ul class="list-group" style="padding-left: 0;">
+        <li *ngFor="let comment of comments" class="list-group-item" style="list-style-type: none;">
+            <p><strong>{{comment.user.name}}</strong> <span>{{comment.message}}</span></p>
+            <button *ngIf="comment.user.id==loggedUserId" mat-icon-button color="warn" (click)="delete(comment.id)">
+                <mat-icon>delete_foreve</mat-icon>
+            </button>
+        </li>
+    </ul>
+</div>
