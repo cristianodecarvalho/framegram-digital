@@ -26,7 +26,6 @@ export class CommentReadComponent implements OnInit {
   delete(commentId): void {
     this.commentService.delete(commentId).subscribe(comment => {
       this.removeComment.emit(comment)
-      // this.comments = this.comments.filter( comment => comment.id != commentId)
       this.commentService.showMessage('Comentário excluído!')
     })
   }

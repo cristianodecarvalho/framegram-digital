@@ -44,7 +44,7 @@ export class PostReadComponent implements OnInit {
   delete(postId: string): void {
     this.postervice.delete(postId).subscribe(() => {
       this.posts = this.posts.filter( post => post.id != postId)
-      this.postervice.showMessage("Post excluído!")
+      this.postervice.showMessage("Publicação excluída!")
     });
   }
 

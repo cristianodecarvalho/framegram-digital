@@ -39,7 +39,7 @@ export class PostCreateComponent implements OnInit {
 
   createPost(): void {
     this.postService.create(this.post).subscribe(() => {
-      this.postService.showMessage('Publicação criado!')
+      this.postService.showMessage('Publicação criada!')
       this.router.navigate(['/my-posts'])
     })
   }

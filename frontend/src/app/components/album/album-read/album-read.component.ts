@@ -24,7 +24,7 @@ export class AlbumReadComponent implements OnInit {
   delete(albumId: string): void {
     this.albumService.delete(albumId).subscribe(() => {
       this.albums = this.albums.filter( album => album.id != albumId)
-      this.albumService.showMessage("Albúm excluída!")
+      this.albumService.showMessage("Albúm excluído!")
     });
   }
 

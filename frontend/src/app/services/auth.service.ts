@@ -46,7 +46,4 @@ export class AuthService {
         this.showMessage("Ocorreu um erro!", true);
         return EMPTY;
     }
-
-
-
 }

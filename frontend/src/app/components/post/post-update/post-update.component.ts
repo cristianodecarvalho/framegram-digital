@@ -23,7 +23,7 @@ export class PostUpdateComponent implements OnInit {
 
   updatePost(): void {
     this.postService.update(this.post).subscribe(() => {
-      this.postService.showMessage('Post atualizado com sucesso!')
+      this.postService.showMessage('Publicação atualizada!')
       this.router.navigate(['/my-posts'])
     })
   }

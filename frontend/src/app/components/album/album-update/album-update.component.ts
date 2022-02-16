@@ -23,7 +23,7 @@ export class AlbumUpdateComponent implements OnInit {
 
   updateAlbum(): void {
     this.albumService.update(this.album).subscribe(() => {
-      this.albumService.showMessage('Album atualizado com sucesso!')
+      this.albumService.showMessage('Albúm atualizado!')
       this.router.navigate(['/my-albums'])
     })
   }
