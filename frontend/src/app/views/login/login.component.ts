@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('loggedUserId', loggedUserId)
       this.router.navigate(['/'])
     }, e => {
-      console.log(e)
+      this.authService.errorHandler(e)
     })
   }
 

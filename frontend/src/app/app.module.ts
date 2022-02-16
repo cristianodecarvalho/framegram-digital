@@ -14,8 +14,6 @@ import { MatSidenavModule } from  '@angular/material/sidenav';
 import { MatCardModule } from  '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
-import { ProductCrudComponent } from './views/product-crud/product-crud.component';
-import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { MatButtonModule } from  '@angular/material/button';
 import { MatSnackBarModule } from  '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
@@ -24,12 +22,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from  '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ProductReadComponent } from './components/product/product-read/product-read.component';
-import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { RedDirective } from './directives/red.directive';
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSelectModule } from '@angular/material/select'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -37,11 +32,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from  '@angular/common';
-import { ForDirective } from './directives/for.directive';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
-import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
-import { PostCrudComponent } from './views/post-crud/post-crud.component';
-import { AlbumCrudComponent } from './views/album-crud/album-crud.component';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
 import { AlbumCreateComponent } from './components/album/album-create/album-create.component';
 import { AuthInterceptor } from './http-interceptors/http.interceptor';
@@ -69,16 +59,6 @@ registerLocaleData(localePt);
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ProductCrudComponent,
-    ProductCreateComponent,
-    ProductReadComponent,
-    ProductRead2Component,
-    RedDirective,
-    ForDirective,
-    ProductUpdateComponent,
-    ProductDeleteComponent,
-    PostCrudComponent,
-    AlbumCrudComponent,
     PostCreateComponent,
     AlbumCreateComponent,
     MyPostsComponent,
