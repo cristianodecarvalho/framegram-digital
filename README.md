@@ -23,6 +23,10 @@ Obs: caso algum desses dados: username, password ou port esteja diferente do seu
 
 ## Rodando a aplicação 
 
+Navegue até a raiz do projeto
+
+Execute `cd framegram-digital/framegram/`
+
 Execute `mvn spring-boot:run`
 
 Após a finalização dessa execução dois usuários foram criados, com o uso da ferramenta Flyway
