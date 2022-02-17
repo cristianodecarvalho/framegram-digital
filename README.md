@@ -50,4 +50,5 @@ Utilize esses dois usuários para fazer os testes na aplicação
 
 ## Rodando a aplicação 
 
-Execute `ng serve --proxy-config proxy.config.json`
+Execute `npm install`
+Execute `npm run start`
