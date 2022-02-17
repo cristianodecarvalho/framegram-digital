@@ -25,6 +25,20 @@ Obs: caso algum desses dados: username, password ou port esteja diferente do seu
 
 Execute `mvn spring-boot:run`
 
+Após a finalização dessa execução dois usuários foram criados, com o uso da ferramenta Flyway
+
+### Usuários criados
+
+- Usuário UM
+  - login: usuario01
+  - password: 123456
+
+- Usuário DOIS
+  - login: usuario02
+  - password: 123456
+
+Utilize esses dois usuários para fazer os testes na aplicação
+
 # Frontend
 
 ## Ferramentas/Tecnologias utilizadas
