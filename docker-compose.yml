@@ -1,0 +1,46 @@
+version: "3.9"
+services:
+  framegram:
+    build: ./framegram
+    networks:
+      - framegram-local
+    environment:
+      # - DB_HOST=localhost
+      # - DB_PORT=5432
+      # - DB_NAME=framegram-db
+      # - DB_USERNAME=postgres
+      # - DB_PASSWORD=postgres
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://framegramdb:5432/framegram-db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+    depends_on:
+      - framegramdb
+    # restart: unless-stopped
+ 
+  framegramdb:
+    image: postgres:14.1
+    networks:
+      - framegram-local
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=framegram-db
+    
+  frontend:
+    build: ./frontend
+    networks:
+      - framegram-local   
+    ports:
+      - "4200:80"
+    depends_on:
+      - framegram
+
+networks:
+  framegram-local:
+    driver: bridge
+    name: framegram-local
