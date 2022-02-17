@@ -1,0 +1,35 @@
+# Backend
+ 
+## Ferramentas/Tecnologias utilizadas
+- Java 11;
+- Spring Boot v2.6.3
+- Postgresql 13
+- Maven v4.0.0
+
+## Preparando ambiente
+
+### Passo 1: configuração do banco
+>  *Você precisará criar um banco de dados com o nome 'framegram-db'*
+
+### Passo 2: configurar application.properties
+>  *Você precisará verificar se os dados passados no application.properties estão de acordo com a sua máquina*
+#### application.properties
+```
+spring.datasource.url=jdbc:postgresql://localhost:5432/framegram-db
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+```
+Obs: caso algum desses dados: username, password ou port esteja diferente do seu banco, favor corrigir.
+
+## Rodando a aplicação 
+
+Execute `mvn spring-boot:run`
+
+# Frontend
+
+## Ferramentas/Tecnologias utilizadas
+- Angular 9
+
+## Rodando a aplicação 
+
+Execute `ng serve --proxy-config proxy.config.json`
