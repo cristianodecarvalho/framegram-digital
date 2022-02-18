@@ -13,7 +13,6 @@ export class MyPostsComponent implements OnInit {
 
   loggedUserId: number;
   posts: Post[]
-  showSpinner: boolean = true
 
   constructor(private router: Router, private headerService: HeaderService, private postService: PostService) {
     headerService.headerData = {
@@ -25,12 +24,9 @@ export class MyPostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedUserId = parseInt(localStorage.getItem("loggedUserId"))
-    setTimeout( () => {
-      this.showSpinner = false
-      this.postService.readMyPosts().subscribe( posts => {
-        this.posts = posts["content"]
-      });
-    },1000)
+    this.postService.readMyPosts().subscribe( posts => {
+      this.posts = posts["content"]
+    });
   }
 
   navigateToPostCreate(): void {

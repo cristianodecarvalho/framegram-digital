@@ -11,7 +11,6 @@ import { HeaderService } from 'src/app/components/template/header/header.service
 export class PostsComponent implements OnInit {
 
   posts: Post[]
-  showSpinner: boolean = true
 
   constructor(private postService: PostService, private headerService: HeaderService) { 
     headerService.headerData = {
@@ -23,12 +22,9 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     const loggedUserId = localStorage.getItem("loggedUserId");
-    setTimeout( () => {
-      this.showSpinner = false
-      this.postService.read().subscribe( posts => {
-        this.posts = posts["content"].filter( post => post.user.id != loggedUserId)
-      })
-    },1000)
+    this.postService.read().subscribe( posts => {
+      this.posts = posts["content"].filter( post => post.user.id != loggedUserId)
+    })
   }
 
 }

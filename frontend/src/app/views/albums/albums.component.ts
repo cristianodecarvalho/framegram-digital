@@ -11,7 +11,6 @@ import { HeaderService } from 'src/app/components/template/header/header.service
 export class AlbumsComponent implements OnInit {
 
   albums: Album[]
-  showSpinner: boolean = true
 
   constructor(private albumService: AlbumService, private headerService: HeaderService) {
     headerService.headerData = {
@@ -23,15 +22,9 @@ export class AlbumsComponent implements OnInit {
 
   ngOnInit(): void {
     const loggedUserId = localStorage.getItem("loggedUserId");
-
-
-
-    setTimeout(() => {
-      this.showSpinner = false
-      this.albumService.read().subscribe(albums => {
-        this.albums = albums["content"].filter(album => album.user.id != loggedUserId)
-      })
-    }, 1000)
+    this.albumService.read().subscribe(albums => {
+      this.albums = albums["content"].filter(album => album.user.id != loggedUserId)
+    })
   }
 
 }
